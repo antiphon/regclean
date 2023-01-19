@@ -4,8 +4,21 @@
 \alias{MCMC_UpdateThetaGaussianPriors}
 \title{Update of theta in MCMC algorithm}
 \usage{
-MCMC_UpdateThetaGaussianPriors(ZE, theta, tau, meanPriors, varPriors, n0, n1,
-  bbox, binConsidered, DistancesBetweenPointsE, StG, lambda_1, volA)
+MCMC_UpdateThetaGaussianPriors(
+  ZE,
+  theta,
+  tau,
+  meanPriors,
+  varPriors,
+  n0,
+  n1,
+  bbox,
+  binConsidered,
+  DistancesBetweenPointsE,
+  StG,
+  lambda_1,
+  volA
+)
 }
 \arguments{
 \item{ZE}{vector of classification in the big window}

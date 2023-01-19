@@ -4,9 +4,23 @@
 \alias{MCMC_computePosteriorsGaussianPriors}
 \title{compute posteriors and estimation theta}
 \usage{
-MCMC_computePosteriorsGaussianPriors(r, reps, repin, k, DistancesBetweenPointsE,
-  indConsidered, binConsidered, totE, volA, volAE, bbox, meanPriors, varPriors,
-  tau, eps)
+MCMC_computePosteriorsGaussianPriors(
+  r,
+  reps,
+  repin,
+  k,
+  DistancesBetweenPointsE,
+  indConsidered,
+  binConsidered,
+  totE,
+  volA,
+  volAE,
+  bbox,
+  meanPriors,
+  varPriors,
+  tau,
+  eps
+)
 }
 \arguments{
 \item{r}{radius of hardcore process}

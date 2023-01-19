@@ -4,7 +4,7 @@
 \alias{summary.VBclassification}
 \title{Summary method for VB classification}
 \usage{
-summary.VBclassification(x)
+\method{summary}{VBclassification}(x)
 }
 \description{
 Summary method for VB classification

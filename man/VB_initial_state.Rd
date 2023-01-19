@@ -4,8 +4,7 @@
 \alias{VB_initial_state}
 \title{Create the initial state object for VB strauss}
 \usage{
-VB_initial_state(x, R, prior, rho, eps, quads, keep.Q = FALSE,
-  ninja = FALSE)
+VB_initial_state(x, R, prior, rho, eps, quads, keep.Q = FALSE, ninja = FALSE)
 }
 \arguments{
 \item{quads}{number of quads, shortest edge. Longer edge count according to aspect ratio.

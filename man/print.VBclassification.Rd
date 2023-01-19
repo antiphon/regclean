@@ -4,7 +4,10 @@
 \alias{print.VBclassification}
 \title{Print method for VB classification}
 \usage{
-print.VBclassification(x)
+\method{print}{VBclassification}(x, ...)
+}
+\arguments{
+\item{x}{object from VBclassify}
 }
 \description{
 Print method for VB classification

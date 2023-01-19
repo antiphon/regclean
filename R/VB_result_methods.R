@@ -1,9 +1,9 @@
 #' Print method for VB classification
-#' 
+#'
+#' @param x object from VBclassify
+#'
 #' @export
-#' @exportMethod print
-
-print.VBclassification <- function(x) {
+print.VBclassification <- function(x, ...) {
   cat("Result of noise classification using VB\nCall: ")
   print(x$call)
 }
@@ -12,7 +12,6 @@ print.VBclassification <- function(x) {
 #' 
 #' Plots the z-trajectories.
 #' @export
-#' @exportMethod plot
 plot.VBclassification <- function(x, ...) {
   it <- nrow(x$z_hist)
   plot(NA, xlab="iteration", ylab="P(z=1)", ylim=0:1, xlim=c(0,it), ...)
@@ -27,9 +26,6 @@ plot.VBclassification <- function(x, ...) {
 #' Summary method for VB classification
 #' 
 #' @export
-#' @exportMethod summary
-
-
 summary.VBclassification <- function(x){
   
   post <- x$posterior
@@ -59,11 +55,10 @@ summary.VBclassification <- function(x){
 
 #' Print the summary of VB classification result
 #' 
+#' @param x VB classification result
+#' 
 #' @export
-#' @exportMethod print
-
-
-print.VBclassification_summary <- function(x){
+print.VBclassification_summary <- function(x, ...){
   print(x$x)
   bb <- x$W
   w <- paste(apply(bb, 2, function(v)paste0("[",v[1],",",v[2],"]")), collapse=" x ")
@@ -74,11 +69,11 @@ print.VBclassification_summary <- function(x){
   cat("\nMean estimates in typical parametrization:\n")
   print(x$coef)
   
-  #' estimates
+  # estimates
   cat("\nEstimates in exponential-form parametrization:\n")
   print(x$estimates)
-  #'
-  #' Diagnostics
+  #
+  # Diagnostics
   x<-x$x
   it <- nrow(x$z_hist)-1
   cat("\nConvergence eps:", x$eps)

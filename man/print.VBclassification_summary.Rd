@@ -4,7 +4,10 @@
 \alias{print.VBclassification_summary}
 \title{Print the summary of VB classification result}
 \usage{
-print.VBclassification_summary(x)
+\method{print}{VBclassification_summary}(x, ...)
+}
+\arguments{
+\item{x}{VB classification result}
 }
 \description{
 Print the summary of VB classification result

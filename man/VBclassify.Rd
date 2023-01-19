@@ -4,8 +4,16 @@
 \alias{VBclassify}
 \title{Noise removal from regular point patterns}
 \usage{
-VBclassify(x, R, prior, eps = 0.01, rho, verb = FALSE, quads = 1,
-  ninja = FALSE)
+VBclassify(
+  x,
+  R,
+  prior,
+  eps = 0.01,
+  rho,
+  verb = FALSE,
+  quads = 1,
+  ninja = FALSE
+)
 }
 \arguments{
 \item{x}{Point pattern, as list with $x coordinate matrix $bbox bound box ranges (col-wise) (or a ppp)}

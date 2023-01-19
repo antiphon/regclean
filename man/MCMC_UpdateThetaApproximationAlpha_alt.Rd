@@ -4,8 +4,21 @@
 \alias{MCMC_UpdateThetaApproximationAlpha_alt}
 \title{Update of theta in MCMC algorithm}
 \usage{
-MCMC_UpdateThetaApproximationAlpha_alt(ZE, theta, tau, supportPriorLeft,
-  supportPriorRight, n0, n1, bbox, binConsidered, Phi, StG, lambda_1, volA)
+MCMC_UpdateThetaApproximationAlpha_alt(
+  ZE,
+  theta,
+  tau,
+  supportPriorLeft,
+  supportPriorRight,
+  n0,
+  n1,
+  bbox,
+  binConsidered,
+  Phi,
+  StG,
+  lambda_1,
+  volA
+)
 }
 \arguments{
 \item{ZE}{vector of classification in the big window}

@@ -1,15 +1,15 @@
 Package: regclean
 Type: Package
-Title: What the package does (short line)
-Version: 1.1
-Date: 2014-10-22
-Author: Your Name
-Maintainer: Your Name <your@email.com>
-Description: More about what it does (maybe more than one line)
-License: GPL (>= 2)
+Title: Clean Regular Patterns From Poisson Noise
+Version: 1.1-1
+Date: 2023-01-19
+Author: Tuomas Rajala
+Maintainer: Tuomas Rajala <tuomas.rajala@iki.fi>
+Description: Estimate the class-labels of a point pattern points when we assume the generating process is a stationary superposition of a Strauss and a Poisson processes. 
+License: GPL (>= 3)
 Imports: Rcpp (>= 0.11.3)
 LinkingTo: Rcpp
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
-RoxygenNote: 6.0.1
+RoxygenNote: 7.2.3

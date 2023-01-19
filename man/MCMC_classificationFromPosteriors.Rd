@@ -4,8 +4,14 @@
 \alias{MCMC_classificationFromPosteriors}
 \title{classification from posteriors and some subproducts}
 \usage{
-MCMC_classificationFromPosteriors(p, perc, DistancesBetweenPointsE,
-  nrcloseNeighbors, priorExpectationPercentageNoise, r)
+MCMC_classificationFromPosteriors(
+  p,
+  perc,
+  DistancesBetweenPointsE,
+  nrcloseNeighbors,
+  priorExpectationPercentageNoise,
+  r
+)
 }
 \arguments{
 \item{p}{posterior probability of points to be Strauss points}
