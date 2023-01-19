@@ -1,0 +1,97 @@
+---
+title: "Demonstration of the VB classifier"
+author: "Tuomas Rajala"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Demonstration of the VB classifier}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+This vignette demonstrates how to use the classifiers in the package ```regclean```
+```{r}
+library(regclean)
+```
+
+Test pattern:
+
+```{r}
+library(spatstat)
+set.seed(1)
+x1 <- rStrauss(beta=200, gamma=.05, R=.05)
+x0 <- rpoispp(20)
+x <- superimpose(x1 , x0)
+truth <- rep(1:0, c(x1$n, x0$n))
+```
+```{r, fig.height=5, fig.width=5}
+plot(coords(x), asp=1, col=truth+2)
+```
+
+Task is to remove the red points, or at least keep the structure in the green points.
+
+
+Assume we know the range.
+
+```{r}
+R <- 0.05
+```
+
+## VB
+The variational (and some other) approximation classifier:
+```{r, cache=TRUE}
+cl_vb <- VBclassify(x,R)
+```
+
+```{r}
+summary(cl_vb)
+```
+
+Priors: Let's say that the gamma-parameter for Strauss is assumed to be quite small, and that the noise should be around 20%:
+
+```{r, cache=TRUE}
+# prior parameter order: noise intensity, beta, gamma. In log-scale.
+prior <- list(m=c(log(20), 0, log(.01)), S=diag(c(1e1, 1e5, 1)))
+cl_vb <- VBclassify(x, R, prior = prior)
+```
+
+```{r}
+summary(cl_vb)
+```
+
+
+Some plots:
+
+```{r, fig.width=8, fig.height=4}
+par(mfrow=c(1,2))
+plot(cl_vb, main="convergence")
+plot(coords(x), col=2+truth, asp=1, pch=1+18*cl_vb$pred)
+```
+
+
+
+
+## MCMC
+
+Not in the vignette at the moment.
+
+<!--
+The MCMC classifier. 
+
+```{r, include =F, eval=F}
+
+details<-T
+lambert_W0 <- LambertW # something wrong, need to define this.
+cl_mcmc <- MCMCClassifyGaussianPriors(x, R)
+
+```
+
+
+## Compare to original
+
+```{r, include =F, eval=F}
+pats <- listof(true=x1, noisy=x, vb=x[cl_vb$pred==1])
+k1 <- lapply(pats, Kest, correction="trans")
+```
+
+-->
